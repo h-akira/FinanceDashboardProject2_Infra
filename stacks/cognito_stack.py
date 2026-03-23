@@ -32,7 +32,7 @@ class CognitoStack(Stack):
     user_pool = cognito.UserPool(
       self, "UserPool",
       user_pool_name=f"userpool-{project}-{env_name}-infra",
-      self_sign_up_enabled=True,
+      self_sign_up_enabled=False,
       sign_in_aliases=cognito.SignInAliases(email=True),
       auto_verify=cognito.AutoVerifiedAttrs(email=True),
       password_policy=cognito.PasswordPolicy(
